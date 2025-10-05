@@ -3,262 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Коллекция красивых шрифтов</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500&family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600&family=Lora:wght@400;700&family=Open+Sans:wght@300;400;600&family=Raleway:wght@300;400;600&family=Merriweather:wght@300;400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Демонстрация шрифтов HTML</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
+            font-family: Arial, sans-serif;
+            max-width: 800px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 20px;
+            background-color: #f5f5f5;
         }
-
-        header {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
+        
         h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            font-weight: 300;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .fonts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .font-card {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 25px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .font-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .font-number {
-            display: inline-block;
-            background: #6a11cb;
-            color: white;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
             text-align: center;
-            line-height: 36px;
-            font-weight: bold;
-            margin-bottom: 15px;
+            color: #333;
+            margin-bottom: 30px;
         }
-
+        
+        .buttons-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .font-button {
+            padding: 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .font-button:hover {
+            background-color: #45a049;
+        }
+        
+        .font-display {
+            display: none;
+            padding: 25px;
+            margin: 15px 0;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 5px solid #4CAF50;
+        }
+        
         .font-name {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
+            font-weight: bold;
+            margin-bottom: 10px;
             color: #333;
         }
-
+        
         .font-sample {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            min-height: 60px;
-        }
-
-        .font-info {
+            font-size: 18px;
+            line-height: 1.6;
             color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
         }
-
-        .font-usage {
-            background: #f5f5f5;
-            padding: 10px;
-            border-radius: 5px;
-            font-family: monospace;
-            font-size: 0.85rem;
-            overflow-x: auto;
-        }
-
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 40px;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            .fonts-grid {
-                grid-template-columns: 1fr;
-            }
+        
+        .active {
+            background-color: #2196F3;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Коллекция красивых шрифтов</h1>
-            <p class="subtitle">Подборка элегантных и современных шрифтов для ваших проектов</p>
+    <h1>Демонстрация основных шрифтов HTML</h1>
+    
+    <div class="buttons-container">
+        <button class="font-button" onclick="showFont('serif')">Serif</button>
+        <button class="font-button" onclick="showFont('sans-serif')">Sans-Serif</button>
+        <button class="font-button" onclick="showFont('monospace')">Monospace</button>
+        <button class="font-button" onclick="showFont('arial')">Arial</button>
+        <button class="font-button" onclick="showFont('times')">Times New Roman</button>
+        <button class="font-button" onclick="showFont('georgia')">Georgia</button>
+    </div>
+    
+    <div id="serif" class="font-display" style="font-family: serif;">
+        <div class="font-name">Serif (шрифт с засечками)</div>
+        <div class="font-sample">
+            Этот текст написан шрифтом с засечками. Засечки - это небольшие черточки на концах букв. 
+            Такие шрифты часто используются в печатных изданиях, так как они легче читаются в больших объемах текста.
         </div>
-    </header>
-
-    <div class="container">
-        <div class="fonts-grid">
-            <!-- Шрифт 1 -->
-            <div class="font-card">
-                <span class="font-number">1</span>
-                <h2 class="font-name">Playfair Display</h2>
-                <div class="font-sample" style="font-family: 'Playfair Display', serif;">
-                    Элегантный шрифт с засечками
-                </div>
-                <p class="font-info">Классический шрифт с засечками, идеален для заголовков и акцентов.</p>
-                <div class="font-usage">
-                    font-family: 'Playfair Display', serif;
-                </div>
-            </div>
-
-            <!-- Шрифт 2 -->
-            <div class="font-card">
-                <span class="font-number">2</span>
-                <h2 class="font-name">Roboto</h2>
-                <div class="font-sample" style="font-family: 'Roboto', sans-serif;">
-                    Чистый и современный шрифт
-                </div>
-                <p class="font-info">Универсальный шрифт без засечек, отлично подходит для основного текста.</p>
-                <div class="font-usage">
-                    font-family: 'Roboto', sans-serif;
-                </div>
-            </div>
-
-            <!-- Шрифт 3 -->
-            <div class="font-card">
-                <span class="font-number">3</span>
-                <h2 class="font-name">Dancing Script</h2>
-                <div class="font-sample" style="font-family: 'Dancing Script', cursive;">
-                    Изящный рукописный шрифт
-                </div>
-                <p class="font-info">Каллиграфический шрифт, идеален для приглашений и декоративных элементов.</p>
-                <div class="font-usage">
-                    font-family: 'Dancing Script', cursive;
-                </div>
-            </div>
-
-            <!-- Шрифт 4 -->
-            <div class="font-card">
-                <span class="font-number">4</span>
-                <h2 class="font-name">Montserrat</h2>
-                <div class="font-sample" style="font-family: 'Montserrat', sans-serif;">
-                    Геометрический шрифт без засечек
-                </div>
-                <p class="font-info">Современный и стильный шрифт, популярный в веб-дизайне.</p>
-                <div class="font-usage">
-                    font-family: 'Montserrat', sans-serif;
-                </div>
-            </div>
-
-            <!-- Шрифт 5 -->
-            <div class="font-card">
-                <span class="font-number">5</span>
-                <h2 class="font-name">Lora</h2>
-                <div class="font-sample" style="font-family: 'Lora', serif;">
-                    Уравновешенный шрифт с засечками
-                </div>
-                <p class="font-info">Хорошо читаемый шрифт, подходит для длинных текстов.</p>
-                <div class="font-usage">
-                    font-family: 'Lora', serif;
-                </div>
-            </div>
-
-            <!-- Шрифт 6 -->
-            <div class="font-card">
-                <span class="font-number">6</span>
-                <h2 class="font-name">Open Sans</h2>
-                <div class="font-sample" style="font-family: 'Open Sans', sans-serif;">
-                    Дружелюбный и нейтральный шрифт
-                </div>
-                <p class="font-info">Один из самых популярных веб-шрифтов с отличной читаемостью.</p>
-                <div class="font-usage">
-                    font-family: 'Open Sans', sans-serif;
-                </div>
-            </div>
-
-            <!-- Шрифт 7 -->
-            <div class="font-card">
-                <span class="font-number">7</span>
-                <h2 class="font-name">Raleway</h2>
-                <div class="font-sample" style="font-family: 'Raleway', sans-serif;">
-                    Элегантный шрифт без засечек
-                </div>
-                <p class="font-info">Тонкий и стильный шрифт, отлично смотрится в заголовках.</p>
-                <div class="font-usage">
-                    font-family: 'Raleway', sans-serif;
-                </div>
-            </div>
-
-            <!-- Шрифт 8 -->
-            <div class="font-card">
-                <span class="font-number">8</span>
-                <h2 class="font-name">Merriweather</h2>
-                <div class="font-sample" style="font-family: 'Merriweather', serif;">
-                    Читаемый шрифт с засечками
-                </div>
-                <p class="font-info">Отлично подходит для длинных статей и блогов.</p>
-                <div class="font-usage">
-                    font-family: 'Merriweather', serif;
-                </div>
-            </div>
-
-            <!-- Шрифт 9 -->
-            <div class="font-card">
-                <span class="font-number">9</span>
-                <h2 class="font-name">Poppins</h2>
-                <div class="font-sample" style="font-family: 'Poppins', sans-serif;">
-                    Геометрический гротескный шрифт
-                </div>
-                <p class="font-info">Современный и универсальный шрифт для различных проектов.</p>
-                <div class="font-usage">
-                    font-family: 'Poppins', sans-serif;
-                </div>
-            </div>
+    </div>
+    
+    <div id="sans-serif" class="font-display" style="font-family: sans-serif;">
+        <div class="font-name">Sans-Serif (шрифт без засечек)</div>
+        <div class="font-sample">
+            Этот текст написан шрифтом без засечек. Такие шрифты выглядят более современно и чисто. 
+            Они часто используются в интерфейсах веб-сайтов и мобильных приложений.
+        </div>
+    </div>
+    
+    <div id="monospace" class="font-display" style="font-family: monospace;">
+        <div class="font-name">Monospace (моноширинный шрифт)</div>
+        <div class="font-sample">
+            Этот текст написан моноширинным шрифтом. Каждая буква занимает одинаковое пространство. 
+            Такие шрифты используются в программировании и терминалах для лучшего выравнивания кода.
+        </div>
+    </div>
+    
+    <div id="arial" class="font-display" style="font-family: Arial, sans-serif;">
+        <div class="font-name">Arial</div>
+        <div class="font-sample">
+            Arial - один из самых популярных шрифтов без засечек. Он был разработан в 1982 году 
+            и стал стандартным шрифтом во многих операционных системах и приложениях.
+        </div>
+    </div>
+    
+    <div id="times" class="font-display" style="font-family: 'Times New Roman', serif;">
+        <div class="font-name">Times New Roman</div>
+        <div class="font-sample">
+            Times New Roman - классический шрифт с засечками, созданный в 1932 году для газеты Times. 
+            Он остается одним из самых распространенных шрифтов для печатных документов.
+        </div>
+    </div>
+    
+    <div id="georgia" class="font-display" style="font-family: Georgia, serif;">
+        <div class="font-name">Georgia</div>
+        <div class="font-sample">
+            Georgia - элегантный шрифт с засечками, разработанный специально для лучшей читаемости 
+            на экранах компьютеров. Он имеет более крупные символы по сравнению с Times New Roman.
         </div>
     </div>
 
-    <footer>
-        <div class="container">
-            <p>Коллекция красивых шрифтов &copy; 2023</p>
-        </div>
-    </footer>
+    <script>
+        function showFont(fontId) {
+            // Скрываем все блоки с шрифтами
+            const allFonts = document.querySelectorAll('.font-display');
+            allFonts.forEach(font => {
+                font.style.display = 'none';
+            });
+            
+            // Сбрасываем стили всех кнопок
+            const allButtons = document.querySelectorAll('.font-button');
+            allButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Показываем выбранный шрифт
+            const selectedFont = document.getElementById(fontId);
+            if (selectedFont) {
+                selectedFont.style.display = 'block';
+            }
+            
+            // Подсвечиваем активную кнопку
+            event.target.classList.add('active');
+        }
+        
+        // Показываем первый шрифт при загрузке страницы
+        window.onload = function() {
+            showFont('serif');
+        }
+    </script>
 </body>
 </html>
