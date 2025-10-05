@@ -7,16 +7,18 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
             background-color: #f5f5f5;
+            line-height: 1.6;
         }
         
         h1 {
             text-align: center;
             color: #333;
             margin-bottom: 30px;
+            font-size: 2.5em;
         }
         
         .buttons-container {
@@ -27,44 +29,76 @@
         }
         
         .font-button {
-            padding: 15px;
-            font-size: 16px;
+            padding: 18px;
+            font-size: 1.3em;
             border: none;
             border-radius: 8px;
             background-color: #4CAF50;
             color: white;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            font-weight: bold;
         }
         
         .font-button:hover {
             background-color: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
         
         .font-display {
             display: none;
-            padding: 25px;
-            margin: 15px 0;
+            padding: 30px;
+            margin: 20px 0;
             border-radius: 10px;
             background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            border-left: 5px solid #4CAF50;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 6px solid #4CAF50;
         }
         
         .font-name {
             font-weight: bold;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             color: #333;
+            font-size: 1.8em;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
         }
         
         .font-sample {
-            font-size: 18px;
-            line-height: 1.6;
+            font-size: 1.6em;
+            line-height: 1.7;
+            color: #444;
+        }
+        
+        .font-info {
+            font-size: 1.2em;
             color: #666;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border-left: 3px solid #ddd;
         }
         
         .active {
             background-color: #2196F3;
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(33, 150, 243, 0.3);
+        }
+        
+        @media (max-width: 600px) {
+            .buttons-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .font-sample {
+                font-size: 1.4em;
+            }
+            
+            .font-name {
+                font-size: 1.6em;
+            }
         }
     </style>
 </head>
@@ -85,6 +119,11 @@
         <div class="font-sample">
             Этот текст написан шрифтом с засечками. Засечки - это небольшие черточки на концах букв. 
             Такие шрифты часто используются в печатных изданиях, так как они легче читаются в больших объемах текста.
+            <br><br>
+            Пример текста: Съешь же ещё этих мягких французских булок, да выпей чаю.
+        </div>
+        <div class="font-info">
+            <strong>Особенности:</strong> Классический вид, улучшает читаемость длинных текстов, традиционный выбор для печати.
         </div>
     </div>
     
@@ -93,6 +132,11 @@
         <div class="font-sample">
             Этот текст написан шрифтом без засечек. Такие шрифты выглядят более современно и чисто. 
             Они часто используются в интерфейсах веб-сайтов и мобильных приложений.
+            <br><br>
+            Пример текста: Съешь же ещё этих мягких французских булок, да выпей чаю.
+        </div>
+        <div class="font-info">
+            <strong>Особенности:</strong> Современный вид, лучше отображается на экранах, минималистичный дизайн.
         </div>
     </div>
     
@@ -101,6 +145,11 @@
         <div class="font-sample">
             Этот текст написан моноширинным шрифтом. Каждая буква занимает одинаковое пространство. 
             Такие шрифты используются в программировании и терминалах для лучшего выравнивания кода.
+            <br><br>
+            Пример текста: Съешь же ещё этих мягких французских булок, да выпей чаю.
+        </div>
+        <div class="font-info">
+            <strong>Особенности:</strong> Все символы одинаковой ширины, используется для кода и таблиц, технический вид.
         </div>
     </div>
     
@@ -109,6 +158,11 @@
         <div class="font-sample">
             Arial - один из самых популярных шрифтов без засечек. Он был разработан в 1982 году 
             и стал стандартным шрифтом во многих операционных системах и приложениях.
+            <br><br>
+            Пример текста: Съешь же ещё этих мягких французских булок, да выпей чаю.
+        </div>
+        <div class="font-info">
+            <strong>Особенности:</strong> Чистый и нейтральный вид, высокая читаемость, широко распространен.
         </div>
     </div>
     
@@ -117,6 +171,11 @@
         <div class="font-sample">
             Times New Roman - классический шрифт с засечками, созданный в 1932 году для газеты Times. 
             Он остается одним из самых распространенных шрифтов для печатных документов.
+            <br><br>
+            Пример текста: Съешь же ещё этих мягких французских булок, да выпей чаю.
+        </div>
+        <div class="font-info">
+            <strong>Особенности:</strong> Традиционный вид, экономит место на странице, стандарт для академических работ.
         </div>
     </div>
     
@@ -125,6 +184,11 @@
         <div class="font-sample">
             Georgia - элегантный шрифт с засечками, разработанный специально для лучшей читаемости 
             на экранах компьютеров. Он имеет более крупные символы по сравнению с Times New Roman.
+            <br><br>
+            Пример текста: Съешь же ещё этих мягких французских булок, да выпей чаю.
+        </div>
+        <div class="font-info">
+            <strong>Особенности:</strong> Оптимизирован для экранов, элегантный вид, хорошая читаемость при малых размерах.
         </div>
     </div>
 
